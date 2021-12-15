@@ -50,7 +50,7 @@ namespace hexomorse
             return tn;
         }
 
-        private Queue<NodeDirection> recursiveInorder(char c, Queue<NodeDirection> path, TreeNode node)
+        private Queue<NodeDirection>? recursiveInorder(char c, Queue<NodeDirection> path, TreeNode node)
         {
             if (node.Value.Equals(c.ToString(), StringComparison.OrdinalIgnoreCase))
             {
@@ -86,7 +86,7 @@ namespace hexomorse
             {
                 return string.Empty;
             }
-            TreeNode? n = node;
+            TreeNode n = node;
             while (directions.Count > 0)
             {
                 var d = directions.Dequeue();
@@ -106,7 +106,7 @@ namespace hexomorse
         public string Encode(string input)
         {
             //validate input
-            if (input.Any(p => !(char.IsLetter(p) || char.IsWhiteSpace(p))))
+            if (input.Any(p => !(char.IsLetterOrDigit(p) || char.IsWhiteSpace(p))))
             {
                 throw new Exception("only ascii character supported");
             }

@@ -14,6 +14,14 @@ namespace hexomorse.Tests
         }
 
         [Fact]
+        public void encode_digit()
+        {
+            var morseEncoder = Encoder.GetEncoder("morse");
+            var result = morseEncoder.Encode("5 9 hello world");
+            Assert.Equal(".....    ----.    .... . .-.. .-.. ---    .-- --- .-. .-.. -..", result);
+        }
+
+        [Fact]
         public void encode_non_ascii_char()
         {
             var morseEncoder = Encoder.GetEncoder("morse");
@@ -26,6 +34,14 @@ namespace hexomorse.Tests
             var morseEncoder = Encoder.GetEncoder("morse");
             var result = morseEncoder.Decode(".... . .-.. .-.. ---    .-- --- .-. .-.. -..");
             Assert.Equal("HELLO WORLD", result);
+        }
+
+        [Fact]
+        public void decode_digit()
+        {
+            var morseEncoder = Encoder.GetEncoder("morse");
+            var result = morseEncoder.Decode(".....    ----.    .... . .-.. .-.. ---    .-- --- .-. .-.. -..");
+            Assert.Equal("5 9 HELLO WORLD", result);
         }
 
         [Fact]

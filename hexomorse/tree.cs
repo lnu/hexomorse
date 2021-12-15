@@ -8,7 +8,7 @@ namespace hexomorse
 
     public class TreeNode
     {
-        public TreeNode(string value, TreeNode left = null, TreeNode right = null)
+        public TreeNode(string value, TreeNode? left = null, TreeNode? right = null)
         {
             this.Value = value;
             this.Left = left;

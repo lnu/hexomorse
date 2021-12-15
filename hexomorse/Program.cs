@@ -13,7 +13,7 @@
             }
             try
             {
-                string result = null;
+                string? result = null;
                 var encoder = Encoder.GetEncoder(args[1]);
                 if (string.Compare(args[0], "encode", true) == 0)
                 {
