@@ -24,8 +24,8 @@
     <ProjectReference Include="..\hexomorse\hexomorse_netcore.csproj" />
   </ItemGroup>
  <ItemGroup>
-    <Content Include="morse.txt">
+    <Content Include="..\morse.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>  
+    </Content>
   </ItemGroup>
 </Project>
